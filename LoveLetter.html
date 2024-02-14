@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Pen+Script" rel="stylesheet">
+    <style>
+        /* CSS styles provided */
+        h1 {
+            font-family: "Indie Flower";
+            font-weight: 200; /* Updated font weight */
+        }
+        p {
+            text-indent: 30px;
+        }
+        body {
+            margin: 0px;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            transiton: transform 2s;
+            z-index: 1;
+        }
+        .heart > img {
+            width: 50px;
+            height: auto;
+        }
+        .message {
+            padding: 20px;
+            font-family: "Nanum Pen Script";
+            background-color: #eee;
+            width: 300px;
+            height: 75%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            overflow-y: auto; /* Added scrolling for overflow content */
+            animation-name: openmsg;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-play-state: paused;
+            animation-fill-mode: forwards;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            border-radius: 5px;
+        }
+        #messageState {
+        }
+        @keyframes beat {
+            0% {
+                width: 50px;
+            }
+            25% {
+                width: 58px;
+            }
+            30% {
+                width: 50px;
+            }
+            50% {
+                width: 45px;
+            }
+            60% {
+                width: 50px;
+            }
+            75% {
+                width: 58px;
+            }
+            100% {
+                width: 50px;
+            }
+        }
+        @keyframes openmsg {
+            0% {
+                height: 0px;
+                padding: 0px 20px;
+            }
+            100% {
+                height: 75%;
+                padding: 20px 20px;
+            }
+        }
+        @keyframes heartMove {
+            0% {
+                top: 50%;
+            }
+            100% {
+                top: 85%;
+                transform: translate(-50%, 0);
+            }
+        }
+        .openNor {
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+        .closeNor {
+            animation-direction: reverse;
+            animation-play-state: running;
+        }
+        .no-anim {
+            animation: none;
+        }
+        .closed {
+            height: 0px;
+            padding: 0px 20px;
+        }
+        .bottom {
+            bottom: 5px;
+        }
+        .openHer {
+            animation-name: heartMove;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-play-state: running;
+            animation-fill-mode: forwards;
+        }
+        .closeHer {
+            animation-name: heartMove;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-play-state: running;
+            animation-direction: reverse;
+            animation-fill-mode: forwards;
+        }
+        .beating > img {
+            animation-name: beat;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+        .openedHer {
+            top: 85%;
+            transform: translate(-50%, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label>
+            <div class="heart">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg" alt="Heart">
+            </div>
+            <input id="messageState" type="checkbox">
+        </label>
+        <div class="message">
+            <div class="message-content">
+                <h1><b>My Dear Yuen Shan</b></h1>
+                <b>
+                    <p>Where do I even begin? We agreed that our anniversary is on the 27th of August. Meaning that as of the time I write this letter, it has been 171 days 
+                        of us being together. Roughly six months..... not bad eh? Alright, let me start this with the very first sentence you wrote to me in your first letter
+                        .... "You're honestly really annoying you know?". It's true, all the countless nights of me working and hearing you sing, mumble, yap, and go clinically 
+                        insane every time you do your work, makes me want to stick my heart and left ball sack into a blender. But I don't, even if I'm tempted hehe..... because 
+                        it reminds me of one of the biggest joys in my life... You :). </p>
+
+                    <p>From the very first moment when I even thought that I could see myself being with you, I knew you were special (Figuratively.... and also with special needs 
+                        definitely..) and that I could not let you slip away. In just six months you have already invaded my life, not only being my girlfriend but also being my best 
+                        friend, emotional support human, and lifetime no.1 hater.... you little cockroach. </p>
+
+                    <p>Anyways, how do I even begin to describe my little mole rat? Oh, my little Shan..... definitely funny, quirky, hot-tempered, cute, pretty, beautiful, and most 
+                        definitely clinically insane. Every time I get to stare in your eyes..... I merely see myself (literally and conceptually). Oh, the narcissism. Honestly, it's 
+                        perfect. I would never trade one second to not be with you. I love you. You are strong... I mean having to deal with the idiots you get in your life, definitely 
+                        inspiring HAHAHA. But the more time we spend together, the more I get to see and appreciate your core self and moments. </p>
+
+                    <p>In you, I have found my closest friend, lover, and companion on every trip life throws at us. I am eternally grateful for your love, kindness, and the brightness 
+                        that you bring into my life. Your strength inspires me, your knowledge directs me, and your love completes me. Thank you for being yourself, sharing your love 
+                        with me, encouraging me to accept myself, and always being there for me. Every minute with you is a blessing, and I treasure it dearly.</p>
+
+                    <p>I want to spend the rest of my life with you. I want to grow with you, laugh with you, argue with you, do laundry with you, do taxes with you, do cooking with you,
+                         do chores with you and so many more. Could my life be beautiful with a beauty such as yourself? Yeah, I'm sure of it =). Happy Valentine's Day Shan :)
+                    </p>
+
+                    <i style="color: #ff0000">So, it seems like we won't be able to go out on February 14. Rather, Will you be my Valentine for a lifetime instead?</i>
+                    <br>
+                    <br>
+                    Love, Nicholas the Big Mac.
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </b>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // JavaScript code provided
+        $("#messageState").on("change", (x) => {
+            $(".message").removeClass("openNor").removeClass("closeNor");
+            if ($("#messageState").is(":checked")) {
+                $(".message")
+                    .removeClass("closed")
+                    .removeClass("no-anim")
+                    .addClass("openNor");
+                $(".heart")
+                    .removeClass("closeHer")
+                    .removeClass("openedHer")
+                    .addClass("openHer");
+                $(".container").stop().animate({ backgroundColor: "#f48fb1" }, 2000);
+                console.log("Abrindo");
+            } else {
+                $(".message").removeClass("no-anim").addClass("closeNor");
+                $(".heart")
+                    .removeClass("openHer")
+                    .removeClass("openedHer")
+                    .addClass("closeHer");
+                $(".container").stop().animate({ backgroundColor: "#fce4ec" }, 2000);
+                console.log("fechando");
+            }
+        });
+
+        $(".message").on(
+            "webkitAnimationEnd oanimationend msAnimationEnd animationend",
+            function (e) {
+                console.log("Animation End");
+                if ($(".message").hasClass("closeNor")) $(".message").addClass("closed");
+                $(".message")
+                    .removeClass("openNor")
+                    .removeClass("closeNor")
+                    .addClass("no-anim");
+            }
+        );
+
+        $(".heart").on(
+            "webkitAnimationEnd oanimationend msAnimationEnd animationend",
+            function (e) {
+                console.log("Animation End");
+                if (!$(".heart").hasClass("closeHer"))
+                    $(".heart").addClass("openedHer").addClass("beating");
+                else $(".heart").addClass("no-anim").removeClass("beating");
+                $(".heart").removeClass("openHer").removeClass("closeHer");
+            }
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnvelopeLetter</title>
+    <!-- Link your CSS file here -->
+    <link rel="stylesheet" href="css/envelope.css">
+</head>
+<body>
+    <div class="wing right"></div>
+    <div class="wing left"></div>
+    <!-- Make the heart clickable -->
+    <a href="LoveLetter.html">
+        <div class="heart"></div>
+    </a>
+    <div id="envelope">
+        <div class="top"></div>
+        <div class="sides"></div>
+    </div>
+
+    <!-- Optional: You can also use JavaScript to handle the click event -->
+    <script>
+        // Add event listener to the heart element
+        document.querySelector('.heart').addEventListener('click', function() {
+            // Redirect the user to another HTML file
+            window.location.href = 'LoveLetter.html';
+        });
+    </script>
+</body>
+</html>

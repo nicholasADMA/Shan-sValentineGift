@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Flowers</title>
+</head>
+<body>
+    <div class="greetings">
+    <!-- Feel free to customize with more <span> elements -->
+        <span>H</span>
+        <span>E</span>
+        <span>L</span>
+        <span>L</span>
+        <span>O</span>
+        
+        <span>S</span>
+        <span>H</span>
+        <span>A</span>
+        <span>N</span>
+        <span>I</span>
+        <span>Q</span>
+        <span>U</span>
+        <span>A</span>
+    </div>
+    <div class="description">
+        <span>I Have a Gift for You!</span>
+    </div>
+    <div class="button">
+        <button id="flowerButton" class="animated-button" onclick="redirectToFlowerPage()">Click Here for Something Cool!</button>
+        <button id="otherButton" class="animated-button">Click Here for Something Else</button>
+    </div>
+
+    <script>
+        function redirectToFlowerPage() {
+            window.location.href = "flower.html";
+        }
+        const otherButton = document.getElementById('otherButton');
+    otherButton.addEventListener('click', function() {
+        window.location.href = 'EnvelopeLetter.html';
+    });
+    </script>
+</body>
+</html>
