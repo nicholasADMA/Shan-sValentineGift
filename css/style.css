@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', cursive;
+}
+
+body {
+    color: azure;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.greetings {
+    font-size: 6rem;
+    font-weight: 900;
+}
+
+.greetings > span {
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: #fff;
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+    }
+    10%, 90% {
+        color: #111;
+        text-shadow: none;
+    }
+}
+
+.greetings > span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.greetings > span:nth-child(3) {
+    animation-delay: .4s;
+}
+
+.greetings > span:nth-child(4) {
+    animation-delay: .6s;
+}
+
+.greetings > span:nth-child(5) {
+    animation-delay: .8s;
+}
+
+.greetings > span:nth-child(6) {
+    animation-delay: 1s;
+}
+
+.greetings > span:nth-child(7) {
+    animation-delay: 1.2s;
+}
+
+.greetings > span:nth-child(8) {
+    animation-delay: 1.4s;
+}
+
+.greetings > span:nth-child(9) {
+    animation-delay: 1.6s;
+}
+
+.greetings > span:nth-child(10) {
+    animation-delay: 1.8s;
+}
+
+.greetings > span:nth-child(11) {
+    animation-delay: 2s;
+}
+
+.greetings > span:nth-child(12) {
+    animation-delay: 2.2s;
+}
+
+.greetings > span:nth-child(13) {
+    animation-delay: 2.4s;
+}
+
+.description {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+.animated-button {
+    color: var(--bg);
+    font-weight: 600;
+    background-image: linear-gradient(
+        315deg,
+        #a60372 -10%,
+        #381353 50%,
+        #ffedd6 110%
+    );
+    padding: .8em 1.4em;
+    position: relative;
+    isolation: isolate;
+    box-shadow: 0 2px 3px 1px hsl(var(--glow-hue) 50% 20% / 50%), inset 0 -10px 20px -10px hsla(var(--shadow-hue),10%,90%,95%);
+    border-radius: 0.66em;
+    scale: 1;
+    transition: all var(--spring-duration) var(--spring-easing);
+}
+
+.animated-button:hover:not(:active),
+.animated-button.active {
+    transition-duration: calc(var(--spring-duration)*0.5);
+    scale: 1.2;
+    box-shadow: 0 4px 8px -2px hsl(var(--glow-hue) 50% 20% / 50%), inset 0 0 0 transparent;
+}
+
+.animated-button:active {
+    scale: 1.1;
+    transition-duration: calc(var(--spring-duration)*0.5);
+}
+
+.animated-button .shimmer {
+    position: absolute;
+    inset: -40px;
+    border-radius: inherit;
+    mask-image: conic-gradient(
+        from var(--shimmer, 0deg),
+        transparent 0%,
+        transparent 10%,
+        black 36%,
+        black 45%,
+        transparent 50%,
+        transparent 60%,
+        black 85%,
+        black 95%,
+        transparent 100%
+    );
+    mask-size: cover;
+    mix-blend-mode: plus-lighter;
+    animation: shimmer 1s linear infinite both;
+}
+
+.animated-button:hover .shimmer::before,
+.animated-button.active .shimmer::before {
+    opacity: 1;
+    animation: shine 1.2s ease-in 1 forwards;
+}
+
+.animated-button .shimmer::before,
+.animated-button .shimmer::after {
+    transition: all 0.5s ease;
+    opacity: 0;
+    content: "";
+    border-radius: inherit;
+    position: absolute;
+    mix-blend-mode: color;
+    inset: 40px;
+    pointer-events: none;
+}
+
+.animated-button .shimmer::before {
+    box-shadow: 0 0 3px 2px hsl(var(--glow-hue) 20% 95%),
+        0 0 7px 4px hsl(var(--glow-hue) 20% 80%),
+        0 0 13px 4px hsl(var(--glow-hue) 50% 70%),
+        0 0 25px 5px hsl(var(--glow-hue) 100% 70%);
+    z-index: -1;
+}
+
+.animated-button .shimmer::after {
+    box-shadow: inset 0 0 0 1px hsl(var(--glow-hue) 70% 95%),
+        inset 0 0 2px 1px hsl(var(--glow-hue) 100% 80%),
+        inset 0 0 5px 2px hsl(var(--glow-hue) 100% 70%);
+    z-index: 2;
+}
+
+.animated-button .text {
+    color: transparent;
+    background-clip: text;
+    background-color: var(--bg);
+    background-image: linear-gradient(120deg, transparent, hsla(var(--glow-hue),100%,80%,0.66) 40%, hsla(var(--glow-hue),100%,90%,.9) 50%, transparent 52%);
+    background-repeat: no-repeat;
+    background-size: 300% 300%;
+    background-position: center 200%;
+}
+
+.animated-button:hover .text,
+.animated-button.active .text {
+    animation: text .66s ease-in 1 both;
+}
+
+@media screen and (max-width: 574px) {
+    .greetings {
+        display: block;
+        font-size: 3rem;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .button a {
+        font-size: .5rem;
+    }
+}
+
+:root {
+    --glow-hue: 222deg;
+    --shadow-hue: 180deg;
+    --spring-easing: linear(
+    0, 0.002, 0.01 0.9%, 0.038 1.8%, 0.156, 0.312 5.8%, 0.789 11.1%, 1.015 14.2%,
+    1.096, 1.157, 1.199, 1.224 20.3%, 1.231, 1.231, 1.226, 1.214 24.6%,
+    1.176 26.9%, 1.057 32.6%, 1.007 35.5%, 0.984, 0.968, 0.956, 0.949 42%,
+    0.946 44.1%, 0.95 46.5%, 0.998 57.2%, 1.007, 1.011 63.3%, 1.012 68.3%,
+    0.998 84%, 1
+  );
+    --spring-duration: 1.33s;
+}
+
+@property --shimmer {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 33deg;
+}
+
+@keyframes shimmer {
+    0% {
+        --shimmer: 0deg;
+    }
+    100% {
+        --shimmer: 360deg;
+    }
+}
+
+@keyframes shine {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes text {
+    0% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: -100% center;
+    }
+}
